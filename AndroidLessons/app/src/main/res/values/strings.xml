@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Android Lessons</string>
+    <string name="hello">Поздороваться</string>
+    <string name="incBird">Добавить ворону</string>
+    <string name="red">Красный</string>
+    <string name="Yellow">Жёлтый</string>
+    <string name="Green">Зелёный</string>
+</resources>
