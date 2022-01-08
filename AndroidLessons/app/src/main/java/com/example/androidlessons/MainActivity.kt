@@ -1,39 +1,49 @@
 package com.example.androidlessons
 
 import android.graphics.Color
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
 
+
+
 class MainActivity : AppCompatActivity() {
-    @RequiresApi(Build.VERSION_CODES.M)
+
+
+    private lateinit var textView: TextView
+    private lateinit var rootLayout: ConstraintLayout
+    private lateinit var button_red: Button
+    private lateinit var button_yellow: Button
+    private lateinit var button_green: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
-        val textView: TextView = findViewById(R.id.textView)
-        val rootLayout: ConstraintLayout = findViewById(R.id.root_layout)
-        val button_red: Button = findViewById(R.id.button_red)
-        val button_yellow: Button = findViewById(R.id.button_yellow)
-        val button_green: Button = findViewById(R.id.button_green)
 
-        rootLayout.setBackgroundColor(resources.getColor(R.color.RED,null))
+        textView = findViewById(R.id.textView)
 
+        rootLayout = findViewById(R.id.root_layout)
+        rootLayout.setBackgroundColor(Color.RED)
+
+        button_red = findViewById(R.id.button_red)
         button_red.setOnClickListener{
-            rootLayout.setBackgroundColor(resources.getColor(R.color.RED,null))
+            rootLayout.setBackgroundColor(Color.RED)
             textView.setText(R.string.red)
         }
-       button_yellow.setOnClickListener{
+
+        button_yellow = findViewById(R.id.button_yellow)
+        button_yellow.setOnClickListener{
            textView.setText(R.string.Yellow)
-           rootLayout.setBackgroundColor(resources.getColor(R.color.Yellow,null))
+           rootLayout.setBackgroundColor(Color.YELLOW)
        }
+
+        button_green = findViewById(R.id.button_green)
         button_green.setOnClickListener{
             textView.setText(R.string.Green)
-            rootLayout.setBackgroundColor(resources.getColor(R.color.Green,null))
+            rootLayout.setBackgroundColor(Color.GREEN)
         }
     }
 }
